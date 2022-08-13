@@ -578,6 +578,8 @@ h3.profession {
     text-align: center;
 }
 
+/* ////////////////////     media queries    //////////////////// */
+
 @media (max-width: 1199px) {
     .aside {
         left: -270px;

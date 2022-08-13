@@ -1,3 +1,5 @@
+<?php include 'email-form.php' ;?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,31 +176,41 @@
                     <h3 class="contact-title">Any questions?</h3>
                     <h4 class="contact-subtitle">Send me a message.</h4>
                     <div class="row">
-                        <form action="">
+                        <form action="email-form.php" method="POST" name="EmailForm">
                             <div class="contact-form padd-15">
                                 <div class="row">
                                     <div class="form-item col-6 padd-15">
                                         <div class="form-group">
                                             <label for="name">Name:</label>
-                                            <input type="text" id="name" name="name" class="form-control">
+                                            <input type="text" id="name" name="name" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="form-item col-6 padd-15">
                                         <div class="form-group">
                                             <label for="email">Email:</label>
-                                            <input type="email" id="email" name="email" class="form-control">
+                                            <input type="email" id="email" name="email" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <label for="subject">Subject:</label>
+                                            <input type="subject" id="subject" name="subject" class="form-control" required>
                                         </div>
                                     </div>
                                         <div class="form-item col-12 padd-15">
                                             <div class="form-group">
                                                 <label for="message">Message:</label>
-                                                <textarea id="message" name="message" class="form-control"></textarea>
+                                                <textarea id="message" name="message" class="form-control" required></textarea>
                                             </div>
                                         </div>
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
-                                            <button type="submit" class="btn">Send message</button>
+                                            <button type="submit" class="btn" data-wait="Please wait ...">Send message</button>
                                         </div>
+                                    </div>
+                                    <div>
+                                        <p class="success"> <?php echo success; ?></p>
+                                        <p class="failure"><?php echo failure; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +226,7 @@
     <!-- Style Switcher start-->
     <div class="style-switcher">
         <div class="style-switcher-toggler s-icon">
-            <i class="fa fa-cog fa-spin"></i>
+            <i class="fa fa-cog"></i>
         </div>
         <div class="day-night s-icon">
             <i class="fa"></i>
